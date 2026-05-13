@@ -1,16 +1,18 @@
 # { "Depends": "py-genlayer:1jb45aa8ynh2a9c9xn3b7qqh8sm5q93hwfp7jqmwsfhh8jpz09h6" }
 
+from genlayer import *
 import json
 import typing
 from datetime import datetime, timezone
-import gl
 
 
-class TechStackTrendAnalyzer:
+class TechStackTrendAnalyzer(gl.Contract):
+    tracker_name: str
     tracked_techs: str
     snapshots: str
 
-    def __init__(self):
+    def __init__(self, tracker_name: str):
+        self.tracker_name = tracker_name
         self.tracked_techs = "{}"
         self.snapshots = "{}"
 
